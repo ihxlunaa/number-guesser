@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <title> Number guesser </title>
+</head>
+<body>
+    <h1>Guess a number from 1 to 100: </h1>
+    <div class="game">
+        <label for="guessfield">Enter a guess: </label>
+        <input type="text" id="guessfield" class="guessfield">
+        <input type="submit" value="submit guess" class="guesssubmit" id="submitguess">
+    </div>
+</body>
+<script type="text/javascript">
+    let ans = Math.floor(Math.random() * 10)+1;
+    let count = 0;
+    document.getElementById("submitguess").onclick = function () {
+        let guess = document.getElementById("guessfield").value;
+             if (guess == ans) {
+                alert("Bingo! Number of guesses: "
+                    + count);
+            }
+
+            /* If guessed number is greater than actual number*/
+            else if (guess > ans) {
+                count++;
+                alert("Guess a smaller number");
+            }
+            else {
+                count++;
+                alert("Guess a larger number")
+            }
+    }
+</script>
